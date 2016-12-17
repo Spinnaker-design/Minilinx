@@ -1,5 +1,12 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1.text-center= title
+  form.form-horizontal(method='POST')
+    div.form-group
+      label.col-sm-2.control-label(for='urlInput') URL To Be Shortened
+      div.col-sm-10
+        input.form-control(type="url" id="urlInput" placeholder="URL")
+    div.form-group
+      div.col-sm-offset-2.col-sm-10
+        button.btn.btn-default(type='submit') Shorten
