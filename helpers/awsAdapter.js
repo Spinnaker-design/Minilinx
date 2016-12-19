@@ -14,17 +14,13 @@ var AwsAdapter = function() {
       }
     };
 
-    var url = null;
-    docClient.get(params, function(err, data) {
+    return docClient.get(params, function(err, data) {
       if (err) {
         console.error("Unable to read item. Error JSON:", JSON.stringify(err, null, 2));
       } else {
         console.log("GetItem succeeded:", data);
-        url = data.Item.url
       }
     });
-
-    return url;
   }
 
   this.saveUrlData = function(url){
@@ -36,16 +32,13 @@ var AwsAdapter = function() {
         "url": url
       }
     };
-    docClient.put(params, function(err, data) {
+    return docClient.put(params, function(err, data) {
       if (err) {
         console.error("Unable to add item. Error JSON:", JSON.stringify(err, null, 2));
-        id == null
       } else {
         console.log("Added item:", JSON.stringify(data, null, 2));
       }
     });
-
-    return id
   }
 }
 
