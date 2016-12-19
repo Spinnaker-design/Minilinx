@@ -1,12 +1,23 @@
 extends layout
 
 block content
-  h1.text-center= title
-  form.form-horizontal(method='POST')
-    div.form-group
-      label.col-sm-2.control-label(for='urlInput') URL To Be Shortened
-      div.col-sm-10
-        input.form-control(type="url" id="urlInput" placeholder="URL" name="url")
-    div.form-group
-      div.col-sm-offset-2.col-sm-10
-        button.btn.btn-default(type='submit') Shorten
+  div.well
+    form.form-horizontal(method='POST')
+      div.form-group
+        label.col-sm-2.control-label(for='urlInput') URL To Be Shortened
+        div.col-sm-10
+          input.form-control(type="url" id="urlInput" placeholder="URL" name="url")
+      div.form-group
+        div.col-sm-offset-2.col-sm-10
+          button.btn.btn-default(type='submit') Shorten
+  h3.text-center -OR-
+  br
+  div.well
+    form.form-horizontal(method='POST' action='inflate')
+      div.form-group
+        label.col-sm-2.control-label(for='urlInput') Get Details for URL
+        div.col-sm-10
+          input.form-control(type="url" id="urlInput" placeholder="MiniLinx Url" name="shortUrl")
+      div.form-group
+        div.col-sm-offset-2.col-sm-10
+          button.btn.btn-default(type='submit') Details

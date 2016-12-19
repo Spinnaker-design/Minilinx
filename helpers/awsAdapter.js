@@ -1,5 +1,7 @@
 var AWS = require("aws-sdk");
+//Change these for local dynamodb instance
 AWS.config.update({region: "us-west-2", endpoint: "https://dynamodb.us-west-2.amazonaws.com"});
+
 var docClient = new AWS.DynamoDB.DocumentClient();
 var table = "ShortenedURL";
 var shortid = require('shortid');
